@@ -4,13 +4,24 @@ import formatCode from './format-code.ts'
 
 const indentDelta = '  '
 
+function removeExtension (filename: string, nonExt: Iterable<string>) {
+  for (const ext of nonExt) {
+    if (filename.endsWith(ext)) return filename.slice(0, -ext.length)
+  }
+
+  return filename
+}
+
+const nonExt = ['.md', '.html']
+const fixFileName = (basename: string) => removeExtension(basename, nonExt)
+
 const file = (
   basename: string,
   filename: string,
   indent: string
 ) => formatCode(indent, `
   <li class="file" data-basename="${basename}">
-    <a href="${filename}">${basename}</a>
+    <a href="${fixFileName(filename)}">${basename}</a>
   </li>
 `)
 
