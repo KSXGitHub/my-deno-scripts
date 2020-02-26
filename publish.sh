@@ -5,7 +5,7 @@ git checkout master || exit $?
 echo ':: generate'
 deno --allow-all cmd/generate-index-page.ts
 git add tree.html || exit $?
-git commit -m 'Update tree.html'
+git commit -m 'Update tree.html' || exit $?
 git push origin master || exit $?
 echo '>>> gh-pages'
 git checkout gh-pages || exit $?
