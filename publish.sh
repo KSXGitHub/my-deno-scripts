@@ -6,3 +6,5 @@ echo '>>> gh-pages'
 git checkout gh-pages || exit $?
 git merge master || exit $?
 git push origin gh-pages || exit $?
+echo '>>> master'
+exec git checkout master
