@@ -3,6 +3,7 @@ import { join } from 'https://deno.land/std@v0.33.0/path/mod.ts'
 export interface Item {
   readonly container: string
   readonly info: Deno.FileInfo
+  readonly isDirectory: boolean
 }
 
 export async function * traverseFileSystem (
@@ -10,9 +11,14 @@ export async function * traverseFileSystem (
   deep: (param: Item) => boolean
 ): AsyncGenerator<Item> {
   for (const info of await Deno.readDir(container)) {
-    const item: Item = { container, info }
+    const isDirectory = info.isDirectory()
+    const item: Item = {
+      container,
+      info,
+      isDirectory
+    }
     yield item
-    if (info.isDirectory() && deep(item)) {
+    if (isDirectory && deep(item)) {
       yield * traverseFileSystem(join(container, info.name!), deep)
     }
   }
