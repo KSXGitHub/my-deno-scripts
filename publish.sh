@@ -2,6 +2,9 @@
 
 cd "$(dirname "$0")" || exit $?
 
+echo ':: test'
+./test.sh || exit $?
+
 echo '>>> master'
 git checkout master || exit $?
 
