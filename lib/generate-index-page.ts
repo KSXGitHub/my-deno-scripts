@@ -1,5 +1,5 @@
-import { join } from 'https://raw.githubusercontent.com/denoland/deno/v0.33.0/std/path/mod.ts'
-import { writeFileStr } from 'https://raw.githubusercontent.com/denoland/deno/v0.33.0/std/fs/mod.ts'
+import { join } from 'https://deno.land/std@v0.33.0/path/mod.ts'
+import { writeFileStr } from 'https://deno.land/std@v0.33.0/fs/mod.ts'
 import formatCode from './format-code.ts'
 
 const indentDelta = '  '
