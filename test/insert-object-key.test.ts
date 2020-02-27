@@ -1,7 +1,7 @@
 import { assertStrictEq } from 'https://deno.land/std@v0.33.0/testing/asserts.ts'
 import { insertObjectKey, AFTER_KEY } from '../lib/insert-object-key.ts'
 
-Deno.test('insertObjectKey', () => {
+Deno.test('insertObjectKey AFTER_KEY', () => {
   const object = {
     a: 0,
     b: 1,
