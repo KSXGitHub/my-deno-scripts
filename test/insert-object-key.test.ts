@@ -1,5 +1,5 @@
 import { assertStrictEq } from 'https://deno.land/std@v0.33.0/testing/asserts.ts'
-import { insertObjectKey } from '../lib/insert-object-key.ts'
+import { insertObjectKey, AFTER_KEY } from '../lib/insert-object-key.ts'
 
 Deno.test('insertObjectKey', () => {
   const object = {
@@ -14,7 +14,7 @@ Deno.test('insertObjectKey', () => {
     object,
     'key' as const,
     'value' as const,
-    x => x.keyBefore === 'c'
+    AFTER_KEY('c')
   )
 
   assertStrictEq(
