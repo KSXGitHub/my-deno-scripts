@@ -33,8 +33,8 @@ export function insertObjectKey<
       valueAfter
     }
     if (when(param as any)) {
-      const before = entries.slice(0, i)
-      const after = entries.slice(i)
+      const before = entries.slice(0, j)
+      const after = entries.slice(j)
       const newEntries: [Key, Value][] = [...before, [key, value] as any, ...after]
       return Object.fromEntries(newEntries) as any
     }
