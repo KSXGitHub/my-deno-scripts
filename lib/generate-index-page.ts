@@ -21,7 +21,7 @@ async function * directory (
 ): AsyncGenerator<string, void, unknown> {
   yield * formatCode(indent, `
     <li class="directory" data-basename="${basename}">
-      <a href="${dirname}">${basename}</a>
+      <a href="${dirname}">${basename === '.' ? '/' : dirname}</a>
       <ul>
   `)
 
