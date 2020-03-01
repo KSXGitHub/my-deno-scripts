@@ -1,4 +1,4 @@
-import { parse } from 'https://deno.land/std@v0.33.0/flags/mod.ts'
+import { parse } from 'https://deno.land/std@v0.35.0/flags/mod.ts'
 import { getStdIn } from '../lib/stdin.ts'
 import { insertObjectKey } from '../lib/insert-object-key.ts'
 import { jsonIndent } from '../lib/json-indent.ts'

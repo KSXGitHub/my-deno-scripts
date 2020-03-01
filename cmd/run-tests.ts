@@ -1,4 +1,4 @@
-import { join } from 'https://deno.land/std@v0.33.0/path/mod.ts'
+import { join } from 'https://deno.land/std@v0.35.0/path/mod.ts'
 import root from '../lib/project-root.ts'
 import traverse from '../lib/traverse-file-system.ts'
 
