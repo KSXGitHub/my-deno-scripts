@@ -84,6 +84,7 @@ export const html = async (dirname: string) => `
   .split('\n')
   .slice(1)
   .map(line => line.trim() ? line : '')
+  .map(line => line.startsWith(indentDelta) ? line.slice(indentDelta.length) : line)
   .join('\n')
 
 export const write = async (
