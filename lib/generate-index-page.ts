@@ -81,6 +81,9 @@ export const html = async (dirname: string) => `
     </body>
   </html>
 `
+  .split('\n')
+  .slice(1)
+  .join('\n')
 
 export const write = async (
   filename: string,
