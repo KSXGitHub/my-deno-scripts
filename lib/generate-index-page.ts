@@ -83,6 +83,7 @@ export const html = async (dirname: string) => `
 `
   .split('\n')
   .slice(1)
+  .map(line => line.trim() ? line : '')
   .join('\n')
 
 export const write = async (
