@@ -75,7 +75,9 @@ export const html = async (dirname: string) => `
     <body>
       <h1>Files</h1>
       <hr />
-      ${await htmlList(dirname, indentDelta)}
+      <main><nav>
+        ${await htmlList(dirname, indentDelta.repeat(2))}
+      </nav></main>
     </body>
   </html>
 `
